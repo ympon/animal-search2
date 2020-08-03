@@ -11,14 +11,15 @@
         .search-form
           .search-input
     .post-new
-      .post-new__text
-        生き物の名前
-      .post-new__date
-        2020/08/03
-      .post-new__image
+      - @posts.each do |post|
+        .post-new__text
+          = post.text
+        .post-new__date
+          = post.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .post-new__image
+          = image_tag(post.image.to_s) if post.image?
         .post-new__details
           詳細
-        .post-new__delete
-          削除
+        = link_to "削除", post, method: :delete, class: "post-new__delete"
         .post-new__edit
           編集
