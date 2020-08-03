@@ -8,4 +8,14 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .menu
+      .header
+        .main-title
+          %a{ href: "/", class: "main-title__logo"} 
+            Animal Search
+          .user-management
+            .user__name
+              = link_to "ログアウト", "#", class: "logout", method: :delete 
+              = link_to "ログイン", "#", class: "post" 
+              = link_to "新規登録", "#", class: "post" 
     = yield
