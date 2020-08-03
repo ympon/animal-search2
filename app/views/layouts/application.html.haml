@@ -14,8 +14,11 @@
           %a{ href: "/", class: "main-title__logo"} 
             Animal Search
           .user-management
-            .user__name
-              = link_to "ログアウト", "#", class: "logout", method: :delete 
-              = link_to "ログイン", "#", class: "post" 
-              = link_to "新規登録", "#", class: "post" 
+            - if user_signed_in?
+              .user__name
+                = current_user.name
+              = link_to "ログアウト", "/users/sign_out", class: "logout", method: :delete 
+            - else
+              = link_to "ログイン", "/users/sign_in", class: "post" 
+              = link_to "新規登録", "/users/sign_up", class: "post" 
     = yield
