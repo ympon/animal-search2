@@ -3,44 +3,22 @@
     .side-menu__area
       .post__btn__text
         画像を投稿！    
-        = link_to "#", class: "post__btn" do
-          = icon('fas', 'camera')
-      .category
-        .category__bugs
-          = link_to "#", class: "category__bugs__icon" do
-            = icon('fas', 'bug')
-          .category__bugs__text
-            虫
-        .category__fish
-          = link_to "#", class: "category__fish__icon" do
-            = icon('fas', 'fish')  
-          .category__fish__text
-            魚介類
-        .category__birds
-          = link_to "#", class: "category__birds__icon" do
-            = icon('fas', 'kiwi-bird')
-          .category__birds__text
-            鳥類
-        .category-__amphibian
-          = link_to "#", class: "category__amphibian__icon" do
-            = icon('fas', 'frog')
-          .category__amphibian__text
-            両生類
-        .category__reptiles
-          = link_to "#", class: "category__reptiles__icon" do
-            = icon('fas', 'otter')
-          .category__reptiles__text
-            は虫類
-        .category__mammalian
-          = link_to "#", class: "category__mammalian__icon" do
-            = icon('fas', 'paw')
-          .category__mammalian__text
-            ほ乳類
-    .main-menu
+      = link_to "#", class: "post__btn" do
+        = icon('fas', 'camera') 
+  .main-menu         
+    .search-menu
       .search
         .search-form
           .search-input
     .post-new
       .post-new__text
+        生き物の名前
       .post-new__date
+        2020/08/03
       .post-new__image
+        .post-new__details
+          詳細
+        .post-new__delete
+          削除
+        .post-new__edit
+          編集
