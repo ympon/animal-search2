@@ -4,11 +4,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
+    @post = Post.create(post_params)
+    @post.save
+    redirect_to "/"
   end
 
   private
-  
+
   def post_params
     params.require(:post).permit(:image, :text)
   end
