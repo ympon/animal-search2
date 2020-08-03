@@ -7,7 +7,16 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.create(post_params)
-    @post.save
+    if @post.save
+      redirect_to "/"
+    else
+      render :new
+    end
+  end
+
+  def destroy
+    @posts = Post.find(params[:id])
+    @posts.destroy
     redirect_to "/"
   end
 
